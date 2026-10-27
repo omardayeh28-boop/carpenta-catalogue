@@ -32,3 +32,11 @@ category only returns 300 of the 644 products. Product photos are hotlinked to t
 so the catalogue needs an internet connection to show them; print to PDF from a browser.
 
 See [`src/NOTES.md`](src/NOTES.md) for the edge-band roll artwork, crop boxes and design notes.
+
+## Working together
+- **Automatic rebuild:** every push to `main` that touches `src/`, `photos/` or `assets/`
+  runs `.github/workflows/rebuild.yml`, which regenerates the catalogue, trade list and shoot
+  list and commits them to `output/`. You can also run it by hand from the **Actions** tab.
+  It does **not** regenerate `Carpenta_Products.xlsx`, because that file holds hand edits.
+- **Pull before you start, push when you're done.** Collaborators work on a branch and open a
+  pull request into `main`, so changes get reviewed before they reach the live catalogue.
